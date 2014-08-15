@@ -1,5 +1,11 @@
+
+
+body {
+	font-family: Verdana;
+}
+
 .chart rect {
-  fill: steelblue;
+  fill: red;
 }
 
 .chart text {
