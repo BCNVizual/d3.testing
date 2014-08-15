@@ -14,6 +14,15 @@ body {
   text-anchor: end;
 }
 
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+
 .axis text {
   font: 10px sans-serif;
 }
@@ -26,6 +35,6 @@ body {
 }
 
 .x.axis path {
-  display: none;
+/*  display: none;*/
 }
 
