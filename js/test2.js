@@ -6,6 +6,10 @@ var datasource = "data/data.csv"
 var width = 960,
     height = 500;
 
+var margin = {top: 20, right: 30, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
 
@@ -13,8 +17,10 @@ var y = d3.scale.linear()
     .range([height, 0]);
 
 var chart = d3.select(".chart")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv(datasource, type, function(error, data) {
   x.domain(data.map(function(d) { return d.name; }));
